@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BMI 計算器</title>
+  <link rel="stylesheet" href="styles/normalize.css"> <!-- 引入normalize -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> <!-- 引入Open Sans Condensed字型 -->
+  <link rel="stylesheet" href="styles/style.css"> <!-- 引入自己寫的css -->
+</head>
+<body>
+  <section class="calculator">
+    <section class="fields"> <!-- 左邊輸入區塊 -->
+      <h1>BMI 計算器</h1>
+      <h2>輸入身高與體重以得到<br>身體質量指數！</h2>
+      <div>
+        <label for="bodyHeight">身高</label> <!-- 點此輸入框標題就會跳到對應的輸入框（id為bodyHeight的輸入框） -->
+        <input type="number" id="bodyHeight" min="0">公分 <!-- 限制輸入不為負數（最小為0） -->
+      </div>
+      <div>
+        <label for="bodyWeight">體重</label>
+        <input type="number" id="bodyWeight" min="0">公斤
+      </div>
+      <input type="submit" value="計算" onclick="calculateBMI();"> <!-- 送出按鈕 onclick屬性讓你可以在此按鈕被點擊時 呼叫js方法-->
+      <!-- 沒有用form表單元素 -->
+    </section>
+
+    <section class="result"> <!-- 右邊結果區塊 -->
+      <h2>計算結果：</h2>
+      <p id="resultNumber">0</p>
+      <div id="resultTextNormal"></div>
+      <div id="resultTextAbnormal"></div>
+    </section>
+   
+    <div class="clearfix"></div> <!-- 前面使用float創造左右兩欄 需要清除 以撐開下面元素 -->
+  </section>
+
+  <script src="scripts/script.js"></script> <!-- 引入自己寫的js -->
+</body>
+</html>
