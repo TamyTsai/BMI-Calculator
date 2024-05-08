@@ -28,12 +28,52 @@
 
     <section class="result"> <!-- 右邊結果區塊 -->
       <h2>計算結果：</h2>
-      <p id="resultNumber">0</p>
-      <div id="resultTextNormal"></div>
-      <div id="resultTextAbnormal"></div>
+      <p id="resultNumber"></p>
+      <div id="resultTextNormal"></div>  <!-- 正常體位會顯示的文字區塊（非正常體位 此元素就被取代為空字串） -->
+      <div id="resultTextAbnormal"></div>  <!-- 非正常體位會顯示的文字區塊（正常體位 此元素就被取代為空字串） -->
     </section>
    
     <div class="clearfix"></div> <!-- 前面使用float創造左右兩欄 需要清除 以撐開下面元素 -->
+
+    <section class="bodyTable">
+      <table border="1">
+          <thead>
+            <tr>
+              <th>成人肥胖定義</th>
+              <th>身體質量指數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>體重過輕</td>
+              <td>BMI &lt 18.5</td> <!-- 使用特殊字元 -->
+            </tr>
+            <tr>
+              <td>健康體位</td>
+              <td>18.5 &lt= BMI &lt 24</td>
+            </tr>
+              <td rowspan="0">體位異常</td> <!-- 垂直合併欄位到tobody最後一列 -->
+              <td>過重：24 &lt= BMI &lt 27</td>
+            <tr>
+              <td>輕度肥胖：27 &lt= BMI &lt 30</td>
+            </tr>
+            <tr>
+              <td>中度肥胖：30 &lt= BMI &lt 35</td>
+            </tr>
+            <tr>
+              <td>重度肥胖：BMI &gt= 35</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">BMI=體重（公斤）/身高*身高（公尺）</td>
+              <!-- 水平合併2格欄位 -->
+            </tr>
+          </tfoot>
+      </table>
+
+    </section>
+
   </section>
 
   <script src="scripts/script.js"></script> <!-- 引入自己寫的js -->
