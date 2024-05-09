@@ -8,16 +8,16 @@ function bmi(height, weight) {
 // 變數雖然定義在後面，但因為變數提昇的關係，所以這裡可以用？
 
 
-
-
 // 點擊「計算按鈕」後 呼叫的函數:
 // 抓取HTML元素DOM
 // 呼叫bim計算函數 
-// 顯示在結果區塊
+// 在結果區塊顯示結果
 function calculateBMI() {
     // var height = document.getElementById('bodyHeight');
+    // 抓出來給函數bmi運算
     var height = document.querySelector('#bodyHeight').value; // 指定 HTML中id為bodyHeight輸入框 的 輸入值 給 變數height
     var weight = document.querySelector('#bodyWeight').value;
+    // 抓出來改變其內容
     var result = document.querySelector('#resultNumber');
     var resultTextNormal = document.querySelector('#resultTextNormal');
     var resultTextAbnormal = document.querySelector('#resultTextAbnormal');
@@ -25,7 +25,7 @@ function calculateBMI() {
     // console.log(bmi(height,weight));
 
     if ((height != '') && (weight != '')) { // 如果身高、體重輸入的值 皆 非 空字串，才顯示結果（避免顯示NaN（Not a number））
-        result.innerHTML = bmi(height, weight); // 把指定給變數result的HTML元素 替換為 函數bmi所回傳的值
+        result.innerHTML = bmi(height, weight); // 把指定給變數result的HTML元素內容 替換為 函數bmi所回傳的值
         if (bmi(height, weight) < 18.5){
             resultTextNormal.innerHTML = '';
             resultTextAbnormal.innerHTML = '體重過輕';
