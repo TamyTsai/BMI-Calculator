@@ -6,6 +6,8 @@ body {
   background-color: #0b2f69;
 }
 
+/* 計算機區塊 */
+
 body .calculator {
   max-width: 600px;
   margin-left: auto;
@@ -16,6 +18,16 @@ body .calculator {
   border-radius: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
+
+
+/* 分配 內容區塊fields 與 結果區塊result 為左右區塊 */
+body .calculator .fields ,body .calculator .result {
+  width: 50%;
+  float: left;
+}
+
+
+/* 計算機 > 內容區塊（左半） */
 
 body .calculator .fields h1 {
   font-weight: 300;
@@ -36,50 +48,6 @@ body .calculator .fields label {
 
 body .calculator .fields .unit {
   font-size: 1.1em;
-}
-
-body .calculator .result h2 {
-  font-weight: 200;
-}
-
-/* 分配fields與result為左右區塊 */
-body .calculator .fields {
-  width: 50%;
-  float: left;
-}
-
-body .calculator .result {
-  width: 50%;
-  float: left;
-}
-
-#resultNumber {
-  font-family: 'Open Sans Condensed'; /* 字型 字型名稱沒空格的話可以不加引號*/
-  text-align: center;
-  font-weight: 100;
-  font-size: 100px;
-}
-
-#resultTextNormal {
-  font-family: 'Open Sans Condensed';
-  font-size: 2em;
-  font-weight: 300;
-  text-align: center;
-}
-
-#resultTextNormal {
-  font-family: 'Open Sans Condensed';
-  font-size: 2em;
-  font-weight: 300;
-  text-align: center;
-}
-
-#resultTextAbnormal {
-  font-family: 'Open Sans Condensed';
-  color: rgb(186, 0, 0);
-  font-size: 2em;
-  font-weight: 500;
-  text-align: center;
 }
 
 /* 所有數字類型輸入框（身高、體重 輸入框） */
@@ -104,6 +72,43 @@ body .calculator .fields input[type="submit"] {
   font-size: 2em;
   font-weight: 200;
 }
+
+
+/* 計算機 > 結果區塊（右半） */
+
+body .calculator .result h2 {
+  font-weight: 200;
+}
+
+body .calculator .result {
+  width: 50%;
+  float: left;
+}
+
+#resultNumber {
+  font-family: 'Open Sans Condensed'; /* 字型 字型名稱沒空格的話可以不加引號*/
+  text-align: center;
+  font-weight: 100;
+  font-size: 100px;
+}
+
+#resultTextNormal {
+  font-family: 'Open Sans Condensed';
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+}
+
+#resultTextAbnormal {
+  font-family: 'Open Sans Condensed';
+  color: rgb(186, 0, 0);
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+/* 計算機 > 體位標準表格區塊（下面） */
 
 /* 體位標準表格 練習手刻表格樣式*/
 body .calculator .bodyTable .bodyTableContent {
@@ -142,6 +147,10 @@ body .calculator .bodyTable .bodyTableContent table tbody .rowEven {
 
 body .calculator .bodyTable .bodyTableContent table tfoot {
   background-color: #FFECCE;
+}
+
+body .calculator .bodyTable .bodyTableContent table tfoot .formula {
+  font-family: 'Open Sans Condensed';
 }
 
 body .calculator .bodyTable .dataResource {
