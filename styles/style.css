@@ -18,7 +18,7 @@ body .calculator {
 }
 
 body .calculator .fields h1 {
-  font-weight: 200;
+  font-weight: 300;
   font-size: 3em;
   margin-top: 0;
   margin-bottom: 0;
@@ -28,6 +28,14 @@ body .calculator .fields h2 {
   font-weight: 200;
   line-height: 35px;
   text-align: center;
+}
+
+body .calculator .fields label {
+  font-size: 1.2em;
+}
+
+body .calculator .fields .unit {
+  font-size: 1.1em;
 }
 
 body .calculator .result h2 {
@@ -75,7 +83,7 @@ body .calculator .result {
 }
 
 /* 所有數字類型輸入框（身高、體重 輸入框） */
-input[type="number"] {
+body .calculator .fields input[type="number"] {
   font-family: 'Open Sans Condensed';
   font-size: 1.5em;
   margin-top: 10px;
@@ -86,7 +94,7 @@ input[type="number"] {
 }
 
 /* 所有傳送類輸入框（「計算」按鈕） */
-input[type="submit"] {
+body .calculator .fields input[type="submit"] {
   background-color: #f8ffb0;
   margin-top: 30px;
   width: 100%;
@@ -94,5 +102,51 @@ input[type="submit"] {
   border-radius: 8px;
   box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
   font-size: 2em;
+  font-weight: 200;
+}
+
+/* 體位標準表格 練習手刻表格樣式*/
+body .calculator .bodyTable .bodyTableContent {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+body .calculator .bodyTable .bodyTableContent table {
+  width:80%;
+  border-collapse: collapse; /* 雙層框線變單層 */
+  font-family: 'Open Sans Condensed';
+  font-size: 1.2em;
+  font-weight: 300;
+  text-align: center;
+  line-height: 30px;
+  border: #87b7f2 solid;
+  /* border: transparent; */
+  /* margin-right: auto;
+  margin-left: auto; */
+}
+
+body .calculator .bodyTable .bodyTableContent table thead {
+  background-color: #F09302;
+  color: #fff;
+}
+
+body .calculator .bodyTable .bodyTableContent table tbody .rowOdd {
+  background-color: #F3F3F3;
+}
+
+body .calculator .bodyTable .bodyTableContent table tbody .rowEven {
+  background-color: #FCFCFD;
+}
+
+body .calculator .bodyTable .bodyTableContent table tfoot {
+  background-color: #FFECCE;
+}
+
+body .calculator .bodyTable .dataResource {
+  width:90%;
+  display: flex;
+  justify-content: flex-end;
   font-weight: 200;
 }

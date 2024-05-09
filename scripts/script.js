@@ -50,6 +50,7 @@ function calculateBMI() {
             resultTextNormal.innerHTML = '';
             resultTextAbnormal.innerHTML = '重度肥胖';
         }
+        // 根據健康體位與異常體位，抓不同的HTML元素，更改其內容，不符合的體位文字就用空字串取代，以達到只顯示 該顯示的體位結果 的目的（兩類體位結果 呈現樣式不同）
     } 
     else if ((height == '') && (weight != '')){
         alert('請輸入身高！');
@@ -63,7 +64,7 @@ function calculateBMI() {
 }
 
 // 判斷體位
-// function body() {
+// function body(bmi(height, weight)) {
 //     if (bmi(height, weight) < 18.5) {
 //         return ('體重過輕');
 //     } else {
