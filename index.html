@@ -7,6 +7,10 @@
   <title>BMI 計算器</title>
   <link rel="stylesheet" href="styles/normalize.css"> <!-- 引入normalize -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> <!-- 引入Open Sans Condensed字型 -->
+  <!-- <link> 放置在 <head> 內，可以確保瀏覽器在渲染網頁內容之前已經載入所需的外部資源，所以當使用者開始看到畫面時，樣式不會有奇怪的變動。
+    如果把 <link> 放在頁面的底部，那麼當瀏覽器載入時，它會先載入頁面的內容，然後再載入 CSS。因此，樣式一開始會是瀏覽器預設，接著才會變成預期的樣式。-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <!-- 引入MathJax以表達數學公式 -->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <!-- 引入MathJax以表達數學公式（設定檔 tex-mml-chtml.js 是同時測試 TeX 和 MathML 輸入選項的好方法。 可在MathJax的文件中找到更精簡的組合元件。） -->
   <link rel="stylesheet" href="styles/style.css"> <!-- 引入自己寫的css -->
 </head>
 <body>
@@ -41,7 +45,7 @@
             <thead>
               <tr>
                 <th>成人肥胖定義</th>
-                <th>身體質量指數</th>
+                <th>身體質量指數（BMI）</th>
               </tr>
             </thead>
             <tbody>
@@ -55,22 +59,24 @@
               </tr>
               <tr class="rowOdd">
                 <td rowspan="0">體位異常</td> <!-- 垂直合併欄位到tobody最後一列 -->
-                <td>過重：24 &lt= BMI &lt 27</td>
+                <td class="rowOdd">過重：24 &lt= BMI &lt 27</td>
               </tr>
-              <tr class="rowOdd">
+              <tr class="rowEven">
                 <td>輕度肥胖：27 &lt= BMI &lt 30</td>
               </tr>
               <tr class="rowOdd">
                 <td>中度肥胖：30 &lt= BMI &lt 35</td>
               </tr>
-              <tr class="rowOdd">
+              <tr class="rowEven">
                 <td>重度肥胖：BMI &gt= 35</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="2">BMI=體重（公斤）/身高*身高（公尺）</td>
+                <td colspan="2" class="formula">$$BMI={體重（公斤）\over身高^2（公尺）}$$</td>
                 <!-- 水平合併2格欄位 -->
+                <!-- Latex和MathJax所用的邊界符號（delimeter）為雙錢字符$$，所以兩對雙錢字符號之間的部分就會被視為數學模式
+                （資料來源：https://ithelp.ithome.com.tw/m/articles/10290247） -->
               </tr>
             </tfoot>
         </table>
@@ -82,5 +88,10 @@
   </section>
 
   <script src="scripts/script.js"></script> <!-- 引入自己寫的js -->
+  <!-- html檔案是自上而下的執行方式，但引入的css和javascript的順序有所不同，css引1入執行載入時，程式仍然往下執行，而執行到<script>腳本是則中斷線程，待 該script腳本執行結束之後程式才繼續往下執行。
+     所以，大部分網路討論都是將script腳本放在sbody-之後，那樣dom的生成就不會因為長時間執行script腳本而延遲阻塞，加快了頁面的載入速度。
+     但又不能將所有的script放在body之後，因為有一些頁面的效果的實現，是需要預先動態的載入一些js腳本。 所以這些腳本應該放在<body>之前。
+     其次，不能將需要存取dom元素的js放在body之前，因為此時還沒有開始產生dom，所以在body之前的存取dom元素的js會出錯，或者無效。
+     （資料來源：https://blog.csdn.net/dshf_1/article/details/113943770） -->
 </body>
 </html>
