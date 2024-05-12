@@ -1,4 +1,5 @@
 ## 簡介
+- [Demo Link](https://tamytsai.github.io/BMI-Calculator/)
 - 本專案為一台BMI計算機
 - 以HTML、CSS及JavaScript撰寫，為一頁式靜態網頁
 - 其中應用Normalize解決不同瀏覽器預設CSS樣式不同的問題
